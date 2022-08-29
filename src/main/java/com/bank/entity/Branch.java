@@ -2,8 +2,6 @@ package com.bank.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,13 +9,13 @@ import javax.persistence.Table;
 @Table(name = "Branch")
 public class Branch {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 
     public Long getId() {
@@ -44,7 +42,8 @@ public class Branch {
         this.address = address;
     }
 
-    public Branch(String name, String address) {
+    public Branch(Long id, String name, String address) {
+        this.id = id;
         this.name = name;
         this.address = address;
     }
