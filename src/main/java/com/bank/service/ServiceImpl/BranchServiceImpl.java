@@ -11,12 +11,14 @@ import com.bank.repository.BranchRepository;
 import com.bank.service.BranchService;
 
 @Service
-public class BranchServiceImpl implements BranchService{
+public class BranchServiceImpl implements BranchService {
 
-    @Autowired private BranchRepository branchRepository;
+    @Autowired
+    private BranchRepository branchRepository;
+
     @Override
     public List<Branch> getList() {
-        return (List<Branch>)branchRepository.findAll();
+        return (List<Branch>) branchRepository.findAll();
     }
 
     @Override
@@ -26,7 +28,8 @@ public class BranchServiceImpl implements BranchService{
 
     @Override
     public Long findLastId() {
-        return branchRepository.findLastId();
+        // return branchRepository.findLastId();
+        return null;
     }
 
     @Override

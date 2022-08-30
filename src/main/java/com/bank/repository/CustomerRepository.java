@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bank.entity.Branch;
+import com.bank.entity.Customer;
 
 @Repository
-public interface BranchRepository extends CrudRepository<Branch, Long>{
-    @Query(value = "SELECT MAX(id) FROM branch", nativeQuery = true)
+public interface CustomerRepository extends CrudRepository<Customer, Long>{
+    @Query(value = "SELECT MAX(id) FROM customer", nativeQuery = true)
     Long findLastCustomerId();
 }
